@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | AUPP FILMMAKERS CLUB</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/ContactUs.css" />
+    <link rel="icon" href="media/Nav_Footer/logo.png" type="image/png">
+  </head>
+  <body>
+    <section class="contactUs-page">
+      <div class="contactUs-background"></div>
+
+      <header class="navbar">
+        <div class="logo-container">
+          <img src="media/Nav_Footer/logo.png" alt="Filmmakers Logo" class="filmmakers-logo" />
+        </div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <i class="fa-solid fa-bars hamburger-icon" aria-hidden="true"></i>
+          <span class="sr-only">Open navigation menu</span>
+        </label>
+
+        <nav class="nav-menu">
+          <a href="home.html" class="nav-item-home">HOME</a>
+          <a href="about-us.html" class="nav-item-about-us">ABOUT US</a>
+          <a href="our-work.html" class="nav-item-our-work">OUR WORK</a>
+          <a href="our-service.html" class="nav-item-our-service">OUR SERVICE</a>
+          <a href="ContactUs.html" class="nav-item-contact-mobile active" aria-current="page">CONTACT US</a>
+        </nav>
+
+        <div class="nav-contact-button active">
+          <a href="ContactUs.html" class="button-label" aria-current="page">CONTACT US</a>
+        </div>
+      </header>
+
+      <div class="contact-us-title">
+        <h1>CONTACT US</h1>
+      </div>
+
+      <section class="contact-links">
+        <a href="https://www.instagram.com/aupp.filmmakers?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="contact-card">
+          <img src="media/Nav_Footer/IG.png" alt="Instagram Icon" class="contact-icon" />
+          <span>@aupp.filmmakers</span>
+        </a>
+
+        <a href="https://www.youtube.com/@auppfilmmakersofficial" class="contact-card">
+          <img src="media/Nav_Footer/YT.png" alt="YouTube Icon" class="contact-icon" />
+          <span>AUPP FILMMAKERS</span>
+        </a>
+
+        <a href="https://web.facebook.com/profile.php?id=61566840352282" class="contact-card">
+          <img src="media/Nav_Footer/FB.png" alt="Facebook Icon" class="contact-icon" />
+          <span>AUPP Filmmakers</span>
+        </a>
+      </section>
+
+      <section class="feedback-section">
+        <h2>Send Us Feedback</h2>
+        <p>How do you feel about our services? We'd love to hear from you!</p>
+        <form class="feedback-form">
+          <label class="sr-only" for="feedback-name">Your name</label>
+          <input id="feedback-name" type="text" name="name" placeholder="Your name" required />
+
+          <label class="sr-only" for="feedback-email">Your email</label>
+          <input id="feedback-email" type="email" name="email" placeholder="Your email" required />
+
+          <label class="sr-only" for="feedback-message">Your message</label>
+          <textarea id="feedback-message" name="message" placeholder="Write your feedback here..." required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-menu">
+          <a href="home.html">HOME</a>
+          <a href="about-us.html">ABOUT US</a>
+          <a href="our-work.html">OUR WORK</a>
+          <a href="our-service.html">OUR SERVICE</a>
+          <a href="ContactUs.html">CONTACT US</a>
+        </div>
+
+        <p class="footer-copyright">Copyright &copy; 2026 AUPP Filmmakers Club</p>
+      </footer>
+    </section>
+  </body>
+</html>

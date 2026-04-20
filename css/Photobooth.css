@@ -1,0 +1,743 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #1f1f1f;
+  color: #fbfbfb;
+}
+
+a {
+  text-decoration: none;
+}
+
+.photobooth-page {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background: #213a80;
+  overflow: hidden;
+}
+
+.photobooth-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 560px;
+  z-index: 0;
+  opacity: 0.88;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(240, 242, 244, 0.646) 0%,
+      hsla(240, 2%, 61%, 0.752) 24%,
+      rgb(16, 77, 175) 60%,
+      #213a80 100%),
+    url("../media/photobooth/photography-background-img.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.navbar,
+.photobooth-title,
+.photobooth-links,
+.footer {
+  position: relative;
+  z-index: 5;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  z-index: 50;
+  width: min(100% - 120px, 1120px);
+  margin: 0 auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filmmakers-logo {
+  width: 32px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.nav-toggle,
+.nav-toggle-label,
+.nav-item-contact-mobile {
+  display: none;
+}
+
+.hamburger-icon {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  color: #002868;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-item-home,
+.nav-item-about-us,
+.nav-item-our-work,
+.nav-item-our-service {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #002868;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.nav-menu a.active {
+  color: #18357b;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.28em;
+}
+
+.nav-contact-button.active {
+  background: #0f255c;
+}
+
+.nav-item-home:hover,
+.nav-item-about-us:hover,
+.nav-item-our-work:hover,
+.nav-item-our-service:hover,
+.nav-contact-button:hover {
+  transform: scale(1.08); /* zoom in a bit */
+  color: lightblue
+}
+
+.nav-contact-button {
+  min-width: 130px;
+  height: 42px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #18357b;
+  border-radius: 999px;
+  transition: all 0.5s ease;
+}
+
+.nav-contact-button:active {
+  background: #2a4d98;
+}
+
+.button-label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fbfbfb;
+  text-transform: uppercase;
+}
+
+.photobooth-title {
+  max-width: 1080px;
+  margin: 42px auto 0;
+  padding: 0 48px 40px;
+  text-align: center;
+}
+
+.photobooth-title h1 {
+  margin-bottom: 24px;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fbfbfb;
+}
+
+.photobooth-title p {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #eef2ff;
+}
+
+.aupp-debate-title {
+  position: relative;
+  z-index: 7;
+  width: min(100% - 120px, 1120px);
+  margin: 32px auto 0;
+  padding: 28px 28px 18px;
+  background: rgba(96, 119, 191, 0.18);
+  border: 1px solid rgba(143, 182, 255, 0.45);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.aupp-debate-title h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #fbfbfb;
+  text-align: center;
+}
+
+.aupp-debate-title p {
+  max-width: 860px;
+  margin: 12px auto 22px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #eef2ff;
+  text-align: center;
+}
+
+.gallery-row1,
+.gallery-row2,
+.gallery-row3,
+.gallery-row4,
+.gallery-row5 {
+  display: grid;
+  gap: 18px;
+  z-index: 10;
+}
+
+.gallery-row1 {
+  max-width: 760px;
+  margin: 0 auto 18px;
+  grid-template-columns: 1fr;;
+}
+
+.gallery-row2,
+.gallery-row3 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.gallery-row4,
+.gallery-row5 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.gallery-row1 .img1,
+.gallery-row2 .img2,
+.gallery-row2 .img3,
+.gallery-row3 .img4,
+.gallery-row3 .img5,
+.gallery-row4 .img6,
+.gallery-row4 .img7,
+.gallery-row4 .img8,
+.gallery-row5 .img9,
+.gallery-row5 .img10,
+.gallery-row5 .img11 {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.gallery-row1 .img1 {
+  aspect-ratio: 1.48 / 1;
+}
+
+.gallery-row2 .img2,
+.gallery-row2 .img3,
+.gallery-row3 .img4,
+.gallery-row3 .img5 {
+  aspect-ratio: 1.42 / 1;
+}
+
+.gallery-row4 .img6,
+.gallery-row4 .img7,
+.gallery-row4 .img8,
+.gallery-row5 .img9,
+.gallery-row5 .img10,
+.gallery-row5 .img11 {
+  aspect-ratio: 1.34 / 1;
+}
+
+.gallery-row1 img,
+.gallery-row2 img,
+.gallery-row3 img,
+.gallery-row4 img,
+.gallery-row5 img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 88px;
+  padding-bottom: 14px;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  margin-bottom: 24px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.footer-social-link:hover {
+  background: #355486;
+}
+
+.footer-social-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.footer-social-link:hover img {
+  transform: scale(1.05);
+}
+
+.footer-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  flex-wrap: wrap;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  margin-bottom: 14px;
+}
+
+.footer-menu a {
+  font-size: 11px;
+  font-weight: 700;
+  color: #002868;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.footer-menu a:hover {
+  color: lightblue;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+  .photobooth-page {
+    width: 100%;
+  }
+
+  .navbar,
+  .aupp-debate-title {
+    width: calc(100% - 48px);
+  }
+
+  .nav-menu {
+    gap: 24px;
+  }
+
+  .photobooth-title {
+    margin-top: 48px;
+    padding: 0 24px 28px;
+  }
+
+  .photobooth-title h1 {
+    font-size: 34px;
+  }
+
+  .photobooth-title p {
+    font-size: 15px;
+  }
+
+  .aupp-debate-title h2 {
+    font-size: 22px;
+  }
+
+  .aupp-debate-title p {
+    font-size: 13px;
+  }
+
+  .footer-menu {
+    gap: 28px;
+  }
+}
+@media (max-width: 700px) {
+  .photobooth-page {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .photobooth-background {
+    height: 300px;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .navbar {
+    height: 60px;
+    padding: 0 12px;
+  }
+
+  .filmmakers-logo {
+    width: 20px;
+  }
+
+  .nav-menu {
+    gap: 10px;
+  }
+
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service {
+    font-size: 5.5px;
+  }
+
+  .nav-contact-button {
+    min-width: 52px;
+    height: 18px;
+    padding: 0 8px;
+    border-radius: 20px;
+  }
+
+  .button-label {
+    font-size: 4.5px;
+  }
+
+  .photobooth-title {
+    max-width: 100%;
+    margin: 22px auto 0;
+    padding: 0 12px;
+  }
+
+  .photobooth-title h1 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .photobooth-title p {
+    max-width: 100%;
+    font-size: 6px;
+    line-height: 1.5;
+  }
+
+  .aupp-debate-title {
+    width: calc(100% - 20px);
+    margin: 20px auto 0;
+    padding: 14px 12px 10px;
+    border-radius: 12px;
+  }
+
+  .aupp-debate-title h2 {
+    font-size: 8px;
+  }
+
+  .aupp-debate-title p {
+    font-size: 6px;
+    line-height: 1.45;
+  }
+
+  .gallery-row1,
+  .gallery-row2,
+  .gallery-row3,
+  .gallery-row4,
+  .gallery-row5 {
+    gap: 8px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .gallery-row1 {
+    margin: 0 auto 10px;
+  }
+
+  .gallery-row2,
+  .gallery-row3 {
+    margin: 0 auto 10px;
+  }
+
+  .gallery-row4,
+  .gallery-row5 {
+    margin: 0 auto 8px;
+  }
+
+  .footer {
+    margin-top: 18px;
+  }
+
+  .footer-social {
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .footer-social-link img {
+    width: 9px;
+    height: 9px;
+  }
+
+  .footer-menu {
+    gap: 10px;
+    padding: 3px 8px 0;
+    margin-bottom: 6px;
+  }
+
+  .footer-menu a {
+    font-size: 4.5px;
+    margin-bottom: 3px;
+  }
+
+  .footer-copyright {
+    font-size: 4.5px;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(220px, calc(100vw - 24px));
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(24, 53, 123, 0.96);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    z-index: 25;
+  }
+
+  .nav-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  .nav-menu .nav-item-contact-mobile {
+    display: inline-flex;
+  }
+
+  .nav-menu a {
+    color: #fbfbfb;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .nav-menu a.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+
+  .nav-contact-button {
+    display: none;
+  }
+
+  .navbar,
+  .aupp-debate-title {
+    width: calc(100% - 24px);
+    height: auto;
+  }
+
+  .navbar {
+    padding-top: 16px;
+  }
+
+  .filmmakers-logo {
+    width: 24px;
+  }
+
+  .nav-menu {
+    gap: 14px;
+  }
+
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service {
+    font-size: 8px;
+  }
+
+  .nav-contact-button {
+    min-width: 86px;
+    height: 30px;
+    padding: 0 14px;
+  }
+
+  .button-label {
+    font-size: 7px;
+  }
+
+  .photobooth-title {
+    margin-top: 24px;
+    padding: 0 12px 20px;
+  }
+
+  .photobooth-title h1 {
+    font-size: 24px;
+  }
+
+  .photobooth-title p,
+  .aupp-debate-title p {
+    font-size: 10px;
+  }
+
+  .aupp-debate-title h2 {
+    font-size: 18px;
+  }
+
+  .gallery-row1,
+  .gallery-row2,
+  .gallery-row3,
+  .gallery-row4,
+  .gallery-row5 {
+    gap: 8px;
+    padding: 0 6px;
+  }
+
+  .footer-social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-social-link img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer-menu {
+    gap: 14px;
+    padding: 6px 12px;
+  }
+
+  .footer-menu a {
+    font-size: 7px;
+  }
+
+  .footer-copyright {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .photobooth-title {
+    max-width: 760px;
+  }
+
+  .photobooth-title h1 {
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
+
+  .photobooth-title p {
+    max-width: 620px;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .aupp-debate-title {
+    margin: 24px auto 0;
+    padding: 16px 16px 12px;
+    border-radius: 10px;
+  }
+
+  .aupp-debate-title h2 {
+    font-size: 14px;
+  }
+
+  .aupp-debate-title p {
+    margin: 10px auto 16px;
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+  .gallery-row1 {
+    max-width: 520px;
+    margin: 0 auto 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-row2,
+  .gallery-row3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 10px;
+  }
+
+  .gallery-row4,
+  .gallery-row5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 10px;
+  }
+
+  .gallery-row1 .img1,
+  .gallery-row2 .img2,
+  .gallery-row2 .img3,
+  .gallery-row3 .img4,
+  .gallery-row3 .img5,
+  .gallery-row4 .img6,
+  .gallery-row4 .img7,
+  .gallery-row4 .img8,
+  .gallery-row5 .img9,
+  .gallery-row5 .img10,
+  .gallery-row5 .img11 {
+    padding: 6px;
+  }
+
+  .footer {
+    margin-top: 28px;
+  }
+}

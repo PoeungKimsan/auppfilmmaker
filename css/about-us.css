@@ -1,0 +1,680 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #002868;
+  color: #fbfbfb;
+}
+
+a {
+  text-decoration: none;
+}
+
+.about-us-page {
+  position: relative;
+  width: 100%;
+  max-width: 1447.5px;
+  min-height: 1292px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #002868;
+}
+
+.about-us-background {
+  position: absolute;
+  inset: 0;
+  height: 30%;
+  width: 100%;
+  z-index: 0;
+  opacity:0.6;
+  background-image:
+    linear-gradient(to bottom,
+      rgba(240, 242, 244, 0.767) 0%,
+      hsla(240, 6%, 87%, 0.752) 24%,
+      rgba(167, 188, 251, 0.96) 40%,
+      rgb(20, 96, 219) 68%,
+      #002868 100%),
+    url("../media/photography/photograph-background-img.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+/* NAVIGATION BAR */
+.navbar,
+.about-us-title,
+.about-us-links,
+.footer {
+  position: relative;
+  z-index: 5;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  z-index: 50;
+  width: min(100% - 120px, 1120px);
+  margin: 0 auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filmmakers-logo {
+  width: 32px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.nav-toggle,
+.nav-toggle-label,
+.nav-item-contact-mobile {
+  display: none;
+}
+
+.hamburger-icon {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  color: #002868;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-item-home,
+.nav-item-about-us,
+.nav-item-our-work,
+.nav-item-our-service {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #002868;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.nav-menu a.active {
+  color: #18357b;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.28em;
+}
+
+.nav-contact-button.active {
+  background: #0f255c;
+}
+
+.nav-item-home:hover,
+.nav-item-about-us:hover,
+.nav-item-our-work:hover,
+.nav-item-our-service:hover,
+.nav-contact-button:hover {
+  transform: scale(1.08); /* zoom in a bit */
+  color: lightblue
+}
+
+.nav-contact-button {
+  min-width: 130px;
+  height: 42px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #18357b;
+  border-radius: 999px;
+  transition: all 0.5s ease;
+}
+
+.nav-contact-button:active {
+  background: #2a4d98;
+}
+
+.button-label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fbfbfb;
+  text-transform: uppercase;
+}
+
+
+/* HERO SECTION */
+.about-us-title {
+  max-width: 760px;
+  margin: 42px auto 0;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about-us-title h1 {
+  margin-bottom: 12px;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fbfbfb;
+}
+
+.about-us-title p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fbfbfb;
+}
+
+/* HOW WE STARTED SECTION */
+.how {
+  position: relative;
+  z-index: 7;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.how h2 {
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 50px;
+  letter-spacing: 1.5px;
+}
+
+/* THE GLASSMOPRHISM CARD */
+.card {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.04); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile h4 {
+  position: relative;
+  z-index: 7;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.profile p {
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* DESCRIPTION SECTION */
+.description {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 30px;
+  text-align: left; }
+.description p {
+  font-size: 15px;
+  line-height: 2;
+  margin-bottom: 25px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+blockquote {
+  font-style: italic;
+  opacity: 0.8;
+  margin: 30px 0;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  line-height: 2;
+}
+
+
+.footer {
+  width: 100%;
+  margin-top: 88px;
+  padding-bottom: 14px;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  margin-bottom: 24px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.footer-social-link:hover {
+  background: #355486;
+}
+
+.footer-social-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.footer-social-link:hover img {
+  transform: scale(1.05);
+}
+
+.footer-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  flex-wrap: wrap;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  margin-bottom: 14px;
+}
+
+.footer-menu a {
+  font-size: 11px;
+  font-weight: 700;
+  color: #002868;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.footer-menu a:hover {
+  color: lightblue;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .how h2 {
+    font-size: 20px;
+  }
+  .profile h4 {
+    font-size: 12px;
+  }
+  .profile p {
+    font-size: 10px;
+  }
+  .profile img {
+    width: 140px;
+    height: 140px;
+  }
+  .navbar {
+    height: 60px;
+    padding: 0 12px;
+  }
+  .filmmakers-logo {
+    width: 20px;
+  }
+  .nav-menu {
+    gap: auto;
+  }
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service,
+  .nav-contact-button {
+    font-size: 8px;
+  }
+  .card {
+    padding: 40px 20px;
+  }
+
+  .description {
+    padding: 0 20px;
+  }
+  .description p {
+    font-size: 10px;
+  }
+  blockquote {
+    font-size: 10px;
+    padding-left: 12px;
+    margin: 20px 0;
+  }
+  .footer {
+    margin-top: 18px;
+  }
+  .footer-social {
+    gap: 10px;
+    margin-bottom: 12px;
+  } 
+  .footer-social-link img {
+    width: 12px;
+    height: 12px;
+  }
+  .footer-menu {
+    gap: 10px;
+    padding: 3px 8px 0;
+    margin-bottom: 12px;
+  }
+  .footer-menu a {
+    font-size: 8px;
+    margin-bottom: 3px;
+  }
+  .footer-copyright {
+    font-size: 8px;
+    margin-bottom: 6px;
+  }
+
+  
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    height: 60px;
+    padding: 0 12px;
+  }
+
+  .filmmakers-logo {
+    width: 20px;
+  }
+
+  .nav-menu {
+    gap: 10px;
+  }
+
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service {
+    font-size: 5.5px;
+  }
+
+  .nav-contact-button {
+    min-width: 52px;
+    height: 18px;
+    padding: 0 8px;
+    border-radius: 20px;
+  }
+
+  .button-label {
+    font-size: 4.5px;
+  }
+
+  .about-us-title {
+    margin-top: 14px;
+  }
+
+  .about-us-title h1 {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .about-us-title p {
+    font-size: 8px;
+  }
+
+  .footer {
+    margin-top: 18px;
+  }
+
+  .footer-social {
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .footer-social-link img {
+    width: 9px;
+    height: 9px;
+  }
+
+  .footer-menu {
+    gap: 10px;
+    padding: 3px 8px 0;
+    margin-bottom: 6px;
+  }
+
+  .footer-menu a {
+    font-size: 4.5px;
+    margin-bottom: 3px;
+  }
+
+  .footer-copyright {
+    font-size: 4.5px;
+    margin-bottom: 6px;
+  }
+
+  .how h2 {
+    font-size: 16px;
+  }
+
+  .profile h4 {
+    font-size: 8px;
+  }
+
+  .profile p {
+    font-size: 6px;
+  }
+  .profile img {
+    width: 120px;
+    height: 120px;
+  }
+  .card {
+    padding: 40px 20px;
+  }
+  .description {
+    padding: 0 20px;
+  } 
+  .description p {
+    font-size: 10px;
+  }
+  blockquote {
+    font-size: 10px;
+    padding-left: 12px;
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(220px, calc(100vw - 24px));
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(24, 53, 123, 0.96);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    z-index: 25;
+  }
+
+  .nav-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  .nav-menu .nav-item-contact-mobile {
+    display: inline-flex;
+  }
+
+  .nav-menu a {
+    color: #fbfbfb;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .nav-menu a.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+
+  .nav-contact-button {
+    display: none;
+  }
+
+  .navbar {
+    width: calc(100% - 24px);
+    padding-top: 16px;
+    height: auto;
+  }
+
+  .filmmakers-logo {
+    width: 24px;
+  }
+
+  .nav-menu {
+    gap: 14px;
+  }
+
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service {
+    font-size: 8px;
+  }
+
+  .nav-contact-button {
+    min-width: 86px;
+    height: 30px;
+    padding: 0 14px;
+  }
+
+  .button-label {
+    font-size: 7px;
+  }
+
+  .about-us-title {
+    margin-top: 24px;
+    padding: 0 12px;
+  }
+
+  .about-us-title h1 {
+    font-size: 24px;
+  }
+
+  .about-us-title p,
+  .description p,
+  blockquote {
+    font-size: 10px;
+  }
+
+  .how {
+    padding: 24px 12px;
+  }
+
+  .how h2 {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    flex-direction: column;
+    gap: 20px;
+    max-width: calc(100% - 24px);
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .profile img {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 12px;
+  }
+
+  .profile h4 {
+    font-size: 12px;
+  }
+
+  .profile p {
+    font-size: 9px;
+  }
+
+  .description {
+    padding: 0 16px;
+  }
+
+  .footer-social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-social-link img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer-menu {
+    gap: 14px;
+    padding: 6px 12px;
+  }
+
+  .footer-menu a {
+    font-size: 7px;
+  }
+
+  .footer-copyright {
+    font-size: 6px;
+  }
+}

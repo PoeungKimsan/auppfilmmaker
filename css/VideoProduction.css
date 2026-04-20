@@ -1,0 +1,549 @@
+/* Video Production Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #1f1f1f;
+  color: #fbfbfb;
+}
+
+a {
+  text-decoration: none;
+}
+
+.video-production-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #213a80;
+  overflow: hidden;
+}
+
+.video-production-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 560px;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.75) 0%,   /* light top for navbar */
+      rgba(200, 220, 255, 0.55) 25%,  /* soft transition */
+      rgba(33, 58, 128, 0.7) 55%,     /* your blue tone */
+      #213a80 100%                    /* solid base */
+    ),
+    url("../media/video-production-background-img.png");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+.navbar,
+.video-production-title,
+.video-production-links,
+.footer {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* Navigation */
+.navbar {
+  position: relative;
+  z-index: 50;
+  width: min(100% - 120px, 1120px);
+  margin: 0 auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filmmakers-logo {
+  width: 32px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.nav-toggle,
+.nav-toggle-label,
+.nav-item-contact-mobile {
+  display: none;
+}
+
+.hamburger-icon {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  color: #002868;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-item-home,
+.nav-item-about-us,
+.nav-item-our-work,
+.nav-item-our-service {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #002868;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.nav-menu a.active {
+  color: #18357b;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.28em;
+}
+
+.nav-contact-button.active {
+  background: #0f255c;
+}
+
+.nav-item-home:hover,
+.nav-item-about-us:hover,
+.nav-item-our-work:hover,
+.nav-item-our-service:hover,
+.nav-contact-button:hover {
+  transform: scale(1.08); /* zoom in a bit */
+  color: lightblue
+}
+
+.nav-contact-button {
+  min-width: 130px;
+  height: 42px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #18357b;
+  border-radius: 999px;
+  transition: all 0.5s ease;
+}
+
+.nav-contact-button:active {
+  background: #2a4d98;
+}
+
+.button-label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fbfbfb;
+  text-transform: uppercase;
+}
+
+
+/* Title and Description Styling */
+.video-production-title {
+  max-width: 760px;
+  margin: 42px auto 0;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.video-production-title h1 {
+  margin-bottom: 12px;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fbfbfb;
+}
+
+.video-production-title p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgba(251, 251, 251, 0.92);
+}
+
+/* Main Projection Card  */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.10); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px); 
+    padding: 50px;
+    margin: 40px auto;
+    max-width: 1000px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 70px 60px;       
+    margin: 60px auto;      
+    max-width: 1100px;        
+    width: 95%;            
+    box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+    text-align: center;       
+}
+#first-card {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 99; 
+    background-color: rgba(255, 255, 255, 0.15); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    
+}
+.project-card h2 {
+    font-size: 30px;        
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0%;
+    align-items: center;
+}
+
+
+.project-card p {
+    font-size: 16px;
+    color: #d1d1d1;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    margin-bottom: 40px;      
+    max-width: 800px;        
+}
+
+.video-placeholder {
+    position: relative;
+    width: 100%;            
+    max-width: 1000px;       
+    aspect-ratio: 16 / 9;    
+    border-radius: 15px;     
+    overflow: hidden;        
+    background-color: #000;  
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.video-placeholder iframe {
+    position: absolute;     
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-placeholder + .video-placeholder {
+    margin-top: 40px;
+}
+
+
+/* Footer Styling */
+.footer {
+  width: 100%;
+  margin-top: 88px;
+  padding-bottom: 14px;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  margin-bottom: 24px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.footer-social-link:hover {
+  background: #355486;
+}
+
+.footer-social-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.footer-social-link:hover img {
+  transform: scale(1.05);
+}
+
+
+.footer-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  flex-wrap: wrap;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  margin-bottom: 14px;
+}
+
+.footer-menu a {
+  font-size: 11px;
+  font-weight: 700;
+  color: #002868;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.footer-menu a:hover {
+  color: lightblue;
+}
+
+
+.footer-copyright {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+
+
+/* Responsive Styling for tablets and small laptops > 1200px */
+@media (max-width: 1024px) {
+  .navbar,
+  .video-production-title {
+    width: calc(100% - 48px);
+  }
+
+  .filmmakers-logo {
+    width: 28px;
+  }
+
+  .nav-menu {
+    gap: 28px;
+  }
+
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service {
+    font-size: 10px;
+  }
+
+  .nav-contact-button {
+    min-width: 112px;
+    height: 38px;
+  }
+
+  .button-label,
+  .footer-menu a {
+    font-size: 10px;
+  }
+
+  .video-production-title h1 {
+    font-size: 30px;
+  }
+
+  .video-production-title p {
+    font-size: 11px;
+  }
+
+  .project-card {
+    padding: 48px 36px;
+    width: calc(100% - 48px);
+  }
+
+  .project-card h2 {
+    font-size: 24px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(220px, calc(100vw - 24px));
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(24, 53, 123, 0.96);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    z-index: 25;
+  }
+
+  .nav-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  .nav-menu .nav-item-contact-mobile {
+    display: inline-flex;
+  }
+
+  .nav-menu a {
+    color: #fbfbfb;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .nav-menu a.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+
+  .nav-contact-button {
+    display: none;
+  }
+
+  .navbar,
+  .video-production-title,
+  .project-card {
+    width: calc(100% - 24px);
+  }
+
+  .navbar {
+    padding-top: 16px;
+  }
+
+  .filmmakers-logo {
+    width: 24px;
+  }
+
+  .nav-menu {
+    gap: 14px;
+  }
+
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service {
+    font-size: 8px;
+  }
+
+  .nav-contact-button {
+    min-width: 86px;
+    height: 30px;
+    padding: 0 14px;
+  }
+
+  .button-label {
+    font-size: 7px;
+  }
+
+  .video-production-title {
+    margin-top: 24px;
+    padding: 0;
+  }
+
+  .video-production-title h1 {
+    font-size: 24px;
+  }
+
+  .video-production-title p {
+    font-size: 10px;
+  }
+
+  .project-card {
+    margin: 28px auto;
+    padding: 24px 18px;
+    border-radius: 12px;
+  }
+
+  .project-card h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .project-card p {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+
+  .video-placeholder + .video-placeholder {
+    margin-top: 18px;
+  }
+
+  .footer {
+    margin-top: 36px;
+  }
+
+  .footer-social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-social-link img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer-menu {
+    gap: 14px;
+    padding: 6px 12px;
+  }
+
+  .footer-menu a {
+    font-size: 7px;
+  }
+
+  .footer-copyright {
+    font-size: 6px;
+  }
+}

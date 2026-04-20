@@ -1,0 +1,555 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #002868;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #002868;
+  min-height: 100vh;
+}
+
+
+.home-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #002868;
+  overflow: hidden;
+}
+
+.home-background {
+   position: absolute;
+  inset: 0;
+  height: 30%;
+  width: 100%;
+  z-index: 0;
+  opacity: 0.6;
+  background-image:
+    linear-gradient(to bottom,
+      rgba(240, 242, 244, 0.767) 0%,
+      hsla(240, 6%, 87%, 0.752) 4%,
+      #213a80 68%,
+      #002868 100%),
+    url("../media/photography/photograph-background-img.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+/* NAVIGATION BAR */
+.navbar,
+.home-title,
+.home-links,
+.footer {
+  position: relative;
+  z-index: 5;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  z-index: 50;
+  width: min(100% - 120px, 1120px);
+  margin: 0 auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filmmakers-logo {
+  width: 32px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.nav-toggle,
+.nav-toggle-label,
+.nav-item-contact-mobile {
+  display: none;
+}
+
+.hamburger-icon {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  color: #002868;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.nav-item-home,
+.nav-item-about-us,
+.nav-item-our-work,
+.nav-item-our-service {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #002868;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.nav-menu a.active {
+  color: #18357b;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.28em;
+}
+
+.nav-contact-button.active {
+  background: #0f255c;
+}
+
+.nav-item-home:hover,
+.nav-item-about-us:hover,
+.nav-item-our-work:hover,
+.nav-item-our-service:hover,
+.nav-contact-button:hover {
+  transform: scale(1.08);
+  color: lightblue;
+}
+
+.nav-contact-button {
+  min-width: 130px;
+  height: 42px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #18357b;
+  border-radius: 999px;
+  transition: all 0.5s ease;
+}
+
+.nav-contact-button:active {
+  background: #2a4d98;
+}
+
+.button-label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fbfbfb;
+  text-transform: uppercase;
+}
+
+.home-title {
+  max-width: 1080px;
+  margin: 42px auto 0;
+  padding: 0 48px 40px;
+  text-align: center;
+}
+
+.home-title h1 {
+  margin-bottom: 24px;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fbfbfb;
+}
+
+.home-title p {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #eef2ff;
+}
+
+/* Footer Navigation */
+.footer {
+  background: #002868;
+  width: 100%;
+  margin-top: 0;
+  padding-bottom: 14px;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  margin-bottom: 24px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+.footer-social-link:hover {
+  background: #355486;
+}
+
+.footer-social-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.footer-social-link:hover img {
+  transform: scale(1.05);
+}
+
+.footer-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  flex-wrap: wrap;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  margin-bottom: 14px;
+}
+
+.footer-menu a {
+  font-size: 11px;
+  font-weight: 700;
+  color: #002868;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.footer-menu a:hover {
+  color: lightblue;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+
+/* Background & Hero */
+
+.portfolio {
+  width: min(100% - 48px, 1120px);
+  margin: 0 auto;
+  padding: 40px 0 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.portfolio h2 {
+  z-index: 3;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.scroll-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 40px 0 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.scroll-container a {
+  display: block;
+  width: min(100%, 760px);
+}
+
+.work-table,
+.work-table td,
+.work-table a {
+  all: unset;
+}
+
+.card {
+  width: 100%;
+  min-height: 320px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 25px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-button {
+  width: 80%;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .navbar,
+  .home-title,
+  .portfolio {
+    width: min(100% - 48px, 1120px);
+  }
+
+  .navbar {
+    padding-top: 18px;
+  }
+
+  .filmmakers-logo {
+    width: 28px;
+  }
+
+  .nav-menu {
+    gap: 28px;
+  }
+
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service {
+    font-size: 10px;
+  }
+
+  .nav-contact-button {
+    min-width: 112px;
+    height: 38px;
+  }
+
+  .button-label,
+  .footer-menu a {
+    font-size: 10px;
+  }
+
+  .home-title h1 {
+    font-size: 30px;
+  }
+
+  .home-title p {
+    font-size: 11px;
+  }
+
+  .scroll-container {
+    padding-top: 32px;
+    gap: 18px;
+  }
+
+  .scroll-container a {
+    width: min(100%, 680px);
+  }
+
+  .card {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(220px, calc(100vw - 24px));
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(24, 53, 123, 0.96);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    z-index: 25;
+  }
+
+  .nav-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label {
+    opacity: 0.8;
+  }
+
+  .nav-menu .nav-item-contact-mobile {
+    display: inline-flex;
+  }
+
+  .hamburger-icon {
+    color: #002868;
+  }
+
+  .nav-menu a {
+    color: #fbfbfb;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .nav-menu a.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+
+  .nav-contact-button {
+    display: none;
+  }
+
+  .navbar,
+  .home-title,
+  .portfolio {
+    width: calc(100% - 24px);
+  }
+
+  .filmmakers-logo {
+    width: 24px;
+  }
+
+  .nav-menu {
+    gap: 14px;
+  }
+
+  .nav-item-home,
+  .nav-item-about-us,
+  .nav-item-our-work,
+  .nav-item-our-service {
+    font-size: 8px;
+  }
+
+  .nav-contact-button {
+    min-width: 86px;
+    height: 30px;
+    padding: 0 14px;
+  }
+
+  .button-label {
+    font-size: 7px;
+  }
+
+  .home-title {
+    margin-top: 24px;
+    padding: 0 0 24px;
+  }
+
+  .home-title h1 {
+    margin-bottom: 14px;
+    font-size: 24px;
+  }
+
+  .home-title p {
+    font-size: 10px;
+  }
+
+  .portfolio h2 {
+    font-size: 14px;
+  }
+
+  .scroll-container {
+    padding: 20px 0 24px;
+    gap: 14px;
+  }
+
+  .scroll-container a {
+    width: 100%;
+  }
+
+  .card {
+    min-height: 210px;
+    padding-bottom: 16px;
+  }
+
+  .card-button {
+    width: 86%;
+    padding: 10px;
+    font-size: 0.75rem;
+  }
+
+  .footer-social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-social-link img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer-menu {
+    gap: 14px;
+    padding: 6px 12px;
+  }
+
+  .footer-menu a {
+    font-size: 7px;
+  }
+
+  .footer-copyright {
+    font-size: 6px;
+  }
+}
